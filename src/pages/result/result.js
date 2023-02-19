@@ -1,4 +1,6 @@
 import { StyleSheet, Text, View, SafeAreaView, FlatList, TouchableOpacity } from "react-native"
+import ResultModal from "./resultModal";
+import { useState } from "react";
 
 const DATA = [
     {
@@ -38,20 +40,28 @@ const Item = ({type, location, accuracy, id}) => (
 );
 
 function Result(){
+    const [resultModalVisible, setResultModalVisible] = useState(false);
+    const [type, setType] = useState('');
+    const [location, setLocation] = useState('');
+    const [accuracy, setAccuracy] = useState('');
 
     const renderItem = ({item, index}) => 
         <TouchableOpacity style={styles.touch} onPressIn={()=>{
             console.log(index)
+            setType(item.type);
+            setLocation(item.location);
+            setAccuracy(item.accuracy);
+            setResultModalVisible(true);
         }}>
             <Item type={item.type} location={item.location} accuracy={item.accuracy} id={item.id} />
         </TouchableOpacity>;
 
     return(
+        <>
         <SafeAreaView>
             <View style={styles.titleview}>
                 <Text style={styles.title}>Detection Result</Text>
             </View>
-      
             <View style={styles.tableview}>
                 <FlatList style={styles.list}
                     data={DATA}
@@ -60,6 +70,15 @@ function Result(){
                 />
             </View> 
         </SafeAreaView>
+        <ResultModal 
+            type={type}
+            location={location}
+            accuracy={accuracy}
+            setResultModalVisible={setResultModalVisible}
+            isVisible={resultModalVisible}
+        />
+        </>
+        
     );
 };
 
