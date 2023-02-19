@@ -25,12 +25,12 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-import Main from './src/pages/main/main'
+import Result from './src/pages/result/result'
 
 function App(): JSX.Element {
 
   return (
-    <Main />
+    <Result />
   );
 }
 
