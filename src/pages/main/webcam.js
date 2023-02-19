@@ -3,7 +3,7 @@ import React from 'react';
 import Video from 'react-native-video';
 import { useState } from "react";
 
-function Navigation(props){
+function Webcam(props){
 
 
     return(
@@ -44,4 +44,4 @@ styles = StyleSheet.create({
     },
 });
 
-export default Navigation;
+export default Webcam;

@@ -6,31 +6,26 @@
  */
 
 import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import Result from './src/pages/result/result';
+import Main from './src/pages/main/main';
 
-import Result from './src/pages/result/result'
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { StyleSheet } from 'react-native';
 
-function App(): JSX.Element {
+const Stack = createNativeStackNavigator();
 
+function App(){
   return (
-    <Result />
+    <>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Main">
+        <Stack.Screen name="Main" component={Main} />
+        <Stack.Screen name="Result" component={Result} />
+      </Stack.Navigator>
+    </NavigationContainer>
+    </>
   );
 }
 
@@ -54,3 +49,4 @@ const styles = StyleSheet.create({
 });
 
 export default App;
+
