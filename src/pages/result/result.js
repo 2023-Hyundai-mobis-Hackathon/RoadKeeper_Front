@@ -1,6 +1,7 @@
 import { StyleSheet, Text, View, SafeAreaView, FlatList, TouchableOpacity } from "react-native"
 import ResultModal from "./resultModal";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from 'axios';
 
 const DATA = [
     {
@@ -29,32 +30,56 @@ const DATA = [
     },
 ];
 
-const Item = ({type, location, accuracy, id}) => (
+const Item = ({category, location, accuracy, quick, complete}) => {
 
-    <View style={styles.item}>
-        <Text style={styles.itemtext}>Type: {type}</Text>
-        <Text style={styles.itemtext}>Location: {location}</Text>
-        <Text style={styles.itemtext}>Accuracy: {accuracy}</Text>
-    </View>
-
-);
+    return(
+        <>
+        <View style={styles.item}>
+            <Text style={styles.itemtext}>Category: {category}</Text>
+            <Text style={styles.itemtext}>Location: {location}</Text>
+            <Text style={styles.itemtext}>Accuracy: {accuracy}</Text>
+            <Text style={styles.itemtext}>Need Quick Fix: {quick.toString()}</Text>
+            <Text style={styles.itemtext}>Fix: {complete.toString()}</Text>
+        </View>
+        </>
+    )
+    
+};
 
 function Result(){
     const [resultModalVisible, setResultModalVisible] = useState(false);
-    const [type, setType] = useState('');
+    const [category, setCategory] = useState('');
     const [location, setLocation] = useState('');
     const [accuracy, setAccuracy] = useState('');
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        if (data === undefined) return;
+        const user_id = "63f3adaa4508143f99d3978a"
+        async function api() { 
+            await axios.get(
+                `http://ec2-18-183-5-142.ap-northeast-1.compute.amazonaws.com/result/${user_id}`
+            ).then((res) => {
+                // console.log(res.data.dangers)
+                setData(res.data.dangers)
+            })
+        }
+        api();
+        // setData(res.data)
+    }, [data])
 
     const renderItem = ({item, index}) => 
-        <TouchableOpacity style={styles.touch} onPressIn={()=>{
-            console.log(index)
-            setType(item.type);
-            setLocation(item.location);
-            setAccuracy(item.accuracy);
-            setResultModalVisible(true);
-        }}>
-            <Item type={item.type} location={item.location} accuracy={item.accuracy} id={item.id} />
-        </TouchableOpacity>;
+        <Item category={item.category} location={item.location} accuracy={item.accuracy} quick={item.quick} complete={item.complete}/>
+    
+        // <TouchableOpacity style={styles.touch} onPress={()=>{
+        //     setCategory(item.category);
+        //     setLocation(item.location);
+        //     setAccuracy(item.accuracy);
+            
+        //     setResultModalVisible(true);
+        // }}>
+            // <Item category={item.category} location={item.location} accuracy={item.accuracy} />
+        // </TouchableOpacity>
 
     return(
         <>
@@ -64,14 +89,13 @@ function Result(){
             </View>
             <View style={styles.tableview}>
                 <FlatList style={styles.list}
-                    data={DATA}
+                    data={data}
                     renderItem={renderItem}
-                    keyExtractor={(item) => item.id}
                 />
             </View> 
         </SafeAreaView>
         <ResultModal 
-            type={type}
+            type={category}
             location={location}
             accuracy={accuracy}
             setResultModalVisible={setResultModalVisible}
