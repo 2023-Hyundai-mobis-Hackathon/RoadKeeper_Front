@@ -21,7 +21,7 @@ function App(){
     <>
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Main">
-        <Stack.Screen name="Main" component={Main} />
+        {/* <Stack.Screen name="Main" component={Main} /> */}
         <Stack.Screen name="Result" component={Result} />
       </Stack.Navigator>
     </NavigationContainer>
