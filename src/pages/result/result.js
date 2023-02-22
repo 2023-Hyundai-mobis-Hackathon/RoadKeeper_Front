@@ -58,10 +58,10 @@ function Result(){
         const user_id = "63f3adaa4508143f99d3978a"
         async function api() { 
             await axios.get(
-                `http://ec2-18-183-5-142.ap-northeast-1.compute.amazonaws.com/result/${user_id}`
+                `http://ec2-35-77-220-13.ap-northeast-1.compute.amazonaws.com/result/${user_id}`
             ).then((res) => {
                 // console.log(res.data.dangers)
-                setData(res.data.dangers)
+                setData(res.data.data)
             })
         }
         api();
