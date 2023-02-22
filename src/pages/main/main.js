@@ -21,9 +21,11 @@ function Main(){
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(false);
 
+    // 임의값
     const user_id = "63f3adaa4508143f99d3978a"
     const road_id = "63f4678ab3e182fa55cb4667"
-    const location = "중부 고속도로"
+    const location = "중부고속도로"
+
     async function api() { 
         setLoading(true);
         await axios.post(
