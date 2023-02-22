@@ -11,7 +11,7 @@
 
 ## 실행 화면
 > 메인 페이지
-<img src="https://user-images.githubusercontent.com/85543502/220560291-400dfb9b-972f-4bec-8a38-ff3b6e6249fe.jpg" height="30%"/>
+<img src="https://user-images.githubusercontent.com/85543502/220560291-400dfb9b-972f-4bec-8a38-ff3b6e6249fe.jpg" height="300px"/>
 
 > 위험물 데이터 페이지
-<img src="https://user-images.githubusercontent.com/51365114/119627750-716f3100-be47-11eb-8e83-686b23c2c161.png height="30%"/>
+<img src="https://user-images.githubusercontent.com/85543502/220560700-fdc09647-3c9f-469b-bdd8-37e62952e747.png" height="300px"/>
