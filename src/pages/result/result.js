@@ -30,7 +30,7 @@ const DATA = [
     },
 ];
 
-const Item = ({category, location, accuracy, quick, complete}) => {
+const Item = ({category, location, accuracy, danger_score, quick, complete}) => {
 
     return(
         <>
@@ -38,8 +38,9 @@ const Item = ({category, location, accuracy, quick, complete}) => {
             <Text style={styles.itemtext}>Category: {category}</Text>
             <Text style={styles.itemtext}>Location: {location}</Text>
             <Text style={styles.itemtext}>Accuracy: {accuracy}</Text>
-            <Text style={styles.itemtext}>Need Quick Fix: {quick.toString()}</Text>
-            <Text style={styles.itemtext}>Fix: {complete.toString()}</Text>
+            <Text style={styles.itemtext}>Danger Score: {danger_score}</Text>
+            {/* <Text style={styles.itemtext}>Need Quick Fix: {quick.toString()}</Text>
+            <Text style={styles.itemtext}>Fix: {complete.toString()}</Text> */}
         </View>
         </>
     )
@@ -55,7 +56,7 @@ function Result(){
 
     useEffect(() => {
         if (data === undefined) return;
-        const user_id = "63f3adaa4508143f99d3978a"
+        const user_id = "63f4676fb3e182fa55cb4662"
         async function api() { 
             await axios.get(
                 `http://ec2-35-77-220-13.ap-northeast-1.compute.amazonaws.com/result/${user_id}`
@@ -69,7 +70,7 @@ function Result(){
     }, [data])
 
     const renderItem = ({item, index}) => 
-        <Item category={item.category} location={item.location} accuracy={item.accuracy} quick={item.quick} complete={item.complete}/>
+        <Item category={item.category} location={item.location} accuracy={item.accuracy} danger_score={item.danger_score} quick={item.quick} complete={item.complete}/>
     
         // <TouchableOpacity style={styles.touch} onPress={()=>{
         //     setCategory(item.category);
