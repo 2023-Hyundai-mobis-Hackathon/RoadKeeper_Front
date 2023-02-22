@@ -83,9 +83,9 @@ function Result(){
 
     return(
         <>
-        <SafeAreaView>
+        <SafeAreaView style={{backgroundColor: "#FFF2F2"}}>
             <View style={styles.titleview}>
-                <Text style={styles.title}>Detection Result</Text>
+                <Text style={styles.title}>인식 결과</Text>
             </View>
             <View style={styles.tableview}>
                 <FlatList style={styles.list}
@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
     titleview: {
         alignItems: "center",
         marginTop: 20,
-        backgroundColor: "#3E54AC",
+        backgroundColor: "#7286D3",
     },
     title: {
         fontSize: 30,
@@ -123,7 +123,8 @@ const styles = StyleSheet.create({
         borderWidth: 5,
         borderRadius: 10,
         borderStyle: "solid",
-        borderColor: "#BFDCE5",
+        borderColor: "#E5E0FF",
+        backgroundColor: "#E5E0FF",
         marginBottom: 5,
         marginLeft: 3,
         marginRight: 3,

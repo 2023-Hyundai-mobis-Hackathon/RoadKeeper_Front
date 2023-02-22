@@ -33,7 +33,7 @@ styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'white',
+        backgroundColor: "#FFF2F2",
     },
     backgroundVideo: {
         position: 'absolute',
