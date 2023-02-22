@@ -3,11 +3,8 @@
 - 사용자에게 인식된 위험물 데이터 제공
 <img src="https://user-images.githubusercontent.com/85543502/220561449-b5cf9e99-69cc-485e-a7ad-bf443170fe6f.gif" height="300px"/>
 
-## 디렉토리 구조
-- 
-
 ## 프로젝트 정보
-- 
+- 개발 환경: vscode, andriod studio
 
 ## 실행 화면
 > 메인 페이지
