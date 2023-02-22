@@ -5,14 +5,13 @@ import { useState } from "react";
 
 function Webcam(props){
 
-
     return(
         <View style={styles.container}>
             <Video
                 // source={{
                 // uri: "https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4?_=1",
                 // }}
-                source={require('../../assets/pothole_video.mp4')}
+                source={require('../../assets/demo.mp4')}
                 style={styles.backgroundVideo}
                 fullscreen={true}
                 resizeMode={'contain'}
