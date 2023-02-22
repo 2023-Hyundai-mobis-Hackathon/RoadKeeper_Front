@@ -9,7 +9,7 @@ import axios from "axios";
 function Loading() {
     return(
         <>
-        <Text>영상 분석 중입니다. 조금만 기다려주세요</Text>
+        <Text style={{fontSize: 15, textAlign: "center", padding: 5,}}>영상 분석 중입니다. 조금만 기다려주세요</Text>
         </>
     )
 }
@@ -22,7 +22,7 @@ function Main(){
     const [loading, setLoading] = useState(false);
 
     // 임의값
-    const user_id = "63f3adaa4508143f99d3978a"
+    const user_id = "63f4676fb3e182fa55cb4662"
     const road_id = "63f4678ab3e182fa55cb4667"
     const location = "중부고속도로"
 
