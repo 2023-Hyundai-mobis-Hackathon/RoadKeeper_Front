@@ -1,7 +1,7 @@
 # 위험 요소 정보 전달과 위험 상황 예방을 위한 차량용 인포테인먼트
 - 실시간으로 도로 영상을 서버에 전송
 - 사용자에게 인식된 위험물 데이터 제공
-<a href='https://ifh.cc/v-PJGCZG' target='_blank' style="height=30%"><video src='https://ifh.cc/v/PJGCZG.mp4' muted autoplay loop playsinline></a>
+<img src="https://user-images.githubusercontent.com/85543502/220561449-b5cf9e99-69cc-485e-a7ad-bf443170fe6f.gif" height="300px"/>
 
 ## 디렉토리 구조
 - 
